@@ -1,0 +1,60 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    DIVIDIDO
+    IOSTREAM
+    MAS
+    MENOS
+    OPERADOR
+    POR
+
+Grammar
+
+Rule 0     S' -> programa
+Rule 1     programa -> inclusion using_namespace funcion
+Rule 2     inclusion -> INCLUDE MENOR ID MAYOR
+Rule 3     using_namespace -> IGNORENAME NAMESPACE ID SIMBOLO
+Rule 4     funcion -> INT ID PABIERTO PCERRADO LLAVE_ABIERTA cuerpo LLAVE_CERRADA
+Rule 5     cuerpo -> impresion retorno
+Rule 6     impresion -> COUNT MENOR MENOR CADENA SIMBOLO
+Rule 7     retorno -> RETURN NUMERO SIMBOLO
+Rule 8     empty -> <empty>
+
+Terminals, with rules where they appear
+
+CADENA               : 6
+COUNT                : 6
+DIVIDIDO             : 
+ID                   : 2 3 4
+IGNORENAME           : 3
+INCLUDE              : 2
+INT                  : 4
+IOSTREAM             : 
+LLAVE_ABIERTA        : 4
+LLAVE_CERRADA        : 4
+MAS                  : 
+MENOS                : 
+NAMESPACE            : 3
+NUMERO               : 7
+OPERADOR             : 
+PABIERTO             : 4
+PCERRADO             : 4
+POR                  : 
+RETURN               : 7
+SIMBOLO              : 3 6 7
+error                : 
+
+Nonterminals, with rules where they appear
+
+MAYOR                : 2
+MENOR                : 2 6 6
+cuerpo               : 4
+empty                : 
+funcion              : 1
+impresion            : 5
+inclusion            : 1
+programa             : 0
+retorno              : 5
+using_namespace      : 1
+

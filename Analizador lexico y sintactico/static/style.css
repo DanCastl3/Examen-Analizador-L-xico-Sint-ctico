@@ -1,0 +1,177 @@
+/* Estilo general */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a2e;
+    color: #eaeaea;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 300px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #1f4068;
+    border: 2px solid #16213e;
+    color: #eaeaea;
+    font-size: 16px;
+    resize: none;
+    margin-bottom: 20px;
+}
+
+.button-section {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Botón Analizar */
+.btn-analizar {
+    background-color: #28a745; /* Verde para el botón Analizar */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-analizar:hover {
+    background-color: #218838; /* Más oscuro al hacer hover */
+}
+
+/* Botón Limpiar */
+.btn-limpiar {
+    background-color: #dc3545; /* Rojo para el botón Limpiar */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-limpiar:hover {
+    background-color: #c82333; /* Más oscuro al hacer hover */
+}
+
+
+/* Título */
+h1 {
+    text-align: center;
+    color: #e94560; /* Rojo claro */
+    font-size: 1.8em; /* Reducir tamaño de fuente */
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+form {
+    background-color: #0f3460; /* Azul muy oscuro */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); /* Sombra oscura */
+    margin-bottom: 20px;
+}
+
+/* Texto 'expresión' */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #eaeaea; /* Texto claro */
+}
+
+textarea {
+    width: 100%; /* Mantén el ancho al 100% del contenedor */
+    height: 200px; /* Aumenta la altura del cuadro */
+    padding: 10px;
+    border: 2px solid #0f3460;
+    border-radius: 5px;
+    background-color: #1f4068;
+    color: #eaeaea;
+    font-size: 16px;
+    resize: none; /* Evita que el usuario cambie el tamaño */
+    margin-bottom: 15px;
+}
+
+input[type="submit"] {
+    background-color: #e94560; /* Rojo oscuro */
+    color: #ffffff;
+    padding: 10px 20px; /* Ajustar padding */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #c0392b; /* Efecto hover más oscuro */
+}
+
+/* Contenedor de tablas */
+.table-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Tablas generales */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1b1b2f; /* Fondo oscuro para tablas */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 10px 12px; /* Ajustar el padding para mejorar legibilidad */
+    border: 1px solid #3d3d3d; /* Borde gris oscuro */
+    text-align: left;
+    font-size: 1em; /* Ajustar tamaño de fuente */
+}
+
+th {
+    background-color: #e94560; /* Rojo oscuro para encabezados */
+    color: #ffffff;
+    font-weight: normal;
+}
+
+tr:nth-child(even) {
+    background-color: #222831; /* Fondo de filas pares más oscuro */
+}
+
+tr:hover {
+    background-color: #393e46; /* Resaltado al pasar el ratón */
+}
+
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .table-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table {
+        max-width: 100%; 
+    }
+
+    pre {
+        font-size: 0.85em; 
+    }
+}

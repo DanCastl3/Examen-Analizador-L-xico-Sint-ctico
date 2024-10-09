@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analizador Léxico y Sintáctico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <form method="POST">
+            <div class="input-section">
+                <textarea id="Expresion" name="Expresion">{{ expresion }}</textarea>
+            </div>
+            <div class="button-section">
+                <button type="submit" class="btn-analizar">Analizar</button>
+                <button type="button" id="limpiar-btn" class="btn-limpiar">Limpiar</button> 
+            </div>
+        </form>
+
+        <div class="output-section">
+            <h2>Resultado del análisis sintáctico:</h2>
+            <p>{{ mensaje_sintaxis }}</p>
+        </div>
+
+        <div class="output-section">
+            <h2>Tokens:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>TOKEN</th>
+                        <th>Palabras Reservadas</th>
+                        <th>Identificador</th>
+                        <th>Paréntesis</th>
+                        <th>Delimitador</th>
+                        <th>Operador</th>
+                        <th>Símbolo</th>
+                        <th>Tipo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for token in tokens %}
+                    <tr>
+                        <td>{{ token[1] }}</td>
+                        <td>{{ token[0] == "RESERVADO" and 'X' or '' }}</td>
+                        <td>{{ token[0] == "IDENTIFICADOR" and 'X' or '' }}</td>
+                        <td>{{ token[0] == "PARENTESIS" and 'X' or '' }}</td>
+                        <td>{{ token[0] == "DELIMITADOR" and 'X' or '' }}</td>
+                        <td>{{ token[0] == "OPERADOR" and 'X' or '' }}</td>
+                        <td>{{ token[0] == "SIMBOLO" and 'X' or '' }}</td>
+                        <td>{{ token[0] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Total</th>
+                        <th>{{ contador.get('RESERVADO', 0) }}</th>
+                        <th>{{ contador.get('IDENTIFICADOR', 0) }}</th>
+                        <th>{{ contador.get('PARENTESIS', 0) }}</th>
+                        <th>{{ contador.get('DELIMITADOR', 0) }}</th> 
+                        <th>{{ contador.get('OPERADOR', 0) }}</th>    
+                        <th>{{ contador.get('SIMBOLO', 0) }}</th>
+                        <th></th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('limpiar-btn').addEventListener('click', function() {
+            document.getElementById('Expresion').value = ''; 
+        });
+    </script>
+</body>
+</html>
